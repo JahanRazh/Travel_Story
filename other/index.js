@@ -1,19 +1,19 @@
 // Import necessary packages and modules
 require("dotenv").config(); // Load environment variables from .env file
 const mongoose = require("mongoose"); // MongoDB ODM (Object Data Modeling) library
-const config = require("./config.json"); // Configuration file containing database connection string
+const config = require("../BackEnd/config.json"); // Configuration file containing database connection string
 const bcrypt = require("bcrypt"); // Library for hashing passwords
 const express = require("express"); // Web framework for Node.js
 const cors = require("cors"); // Middleware to enable CORS (Cross-Origin Resource Sharing)
 const jwt = require("jsonwebtoken"); // Library for creating and verifying JSON Web Tokens (JWT)
 
-const upload = require("./multer"); // Import the multer instance
+const upload = require("../BackEnd/multer"); // Import the multer instance
 const fs = require("fs"); // File system module to interact with the file system
 const path = require("path"); // Module to work with file paths
 
-const User = require("./models/user.model"); // Import the User model
-const TravelStory = require("./models/travelStory.model"); // Import the TravelStory model
-const { authenticateToken } = require("./utilities"); // Import the authentication middleware
+const User = require("../BackEnd/models/user.model"); // Import the User model
+const TravelStory = require("../BackEnd/models/travelStory.model"); // Import the TravelStory model
+const { authenticateToken } = require("../BackEnd/utilities"); // Import the authentication middleware
 
 // Connect to the MongoDB database using the connection string from config.json
 mongoose.connect(config.connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
